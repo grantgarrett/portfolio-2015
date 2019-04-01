@@ -1,0 +1,368 @@
+/*   html5doctor.com Reset Stylesheet (Eric Meyer's Reset Reloaded + HTML5 baseline)  v1.4 2009-07-27 | Authors: Eric Meyer & Richard Clark  html5doctor.com/html-5-reset-stylesheet/*/
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, figure, footer, header, hgroup, menu, nav, section, menu,
+time, mark, audio, video {
+margin:0;
+padding:0;
+border:0;
+outline:0;
+font-size:100%;
+vertical-align:baseline;
+background:transparent;
+}
+ 
+article, aside, figure, footer, header,
+hgroup, nav, section { display:block; }
+ 
+nav ul { list-style:none; }
+ 
+blockquote, q { quotes:none; }
+ 
+blockquote:before, blockquote:after,
+q:before, q:after { content:''; content:none; }
+ 
+a { margin:0; padding:0; font-size:100%; vertical-align:baseline; background:transparent; }
+ 
+ins { background-color:#ff9; color:#000; text-decoration:none; }
+ 
+mark { background-color:#ff9; color:#000; font-style:italic; font-weight:bold; }
+ 
+del { text-decoration: line-through; }
+ 
+abbr[title], dfn[title] { border-bottom:1px dotted #000; cursor:help; }
+ 
+/* tables still need cellspacing="0" in the markup */
+table { border-collapse:collapse; border-spacing:0; }
+ 
+hr { display:block; height:1px; border:0; border-top:1px solid #ccc; margin:1em 0; padding:0; }
+ 
+input, select { vertical-align:middle; }
+/* END RESET CSS */
+
+body {
+	font-family: 'Lato', sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-align: center;
+}
+body a {
+	text-decoration: none;
+	font-weight: 400;
+	transition: all .75s ease-in-out;
+}
+.work p a:hover, .blog p a:hover {
+	color: #fff;
+}
+section.header {
+	background: #fff;
+	padding: 200px 70px 0px;
+	height: 600px;
+}
+.header .avatar {
+	margin: 0 0 15px 0;
+	width: 222px;
+	height: 222px;
+}
+.header h1 {
+	font-size: 37px;
+	color: #33363D;
+	line-height: 50px;
+	font-weight: 300;
+	letter-spacing: 6.5px;
+	position: relative;
+  left: -1px;
+}
+.header h2 {
+	font-size: 22px;
+	color: #969BA8;
+	letter-spacing: 2px;
+	line-height: 46px;
+}
+.header h3 {
+	font-size: 13px;
+	color: #D7DEE5;
+	letter-spacing: 11px;
+	line-height: 36px;
+	text-transform: uppercase;
+}
+
+/* Animate in the header */
+.header .avatar, .header h1, .header h2, .header h3{
+  animation-duration: 2s;
+  animation-name: grandOpening;
+  animation-timing-function: ease-out;
+  
+  -webkit-animation-duration: 2s;
+  -webkit-animation-name: grandOpening;
+  -webkit-animation-timing-function: ease-out;
+}
+@keyframes grandOpening {
+	from {
+	  opacity: 0;
+	  transform: scale(.8);
+	  padding-top: 20px;
+	}
+	to {
+	  opacity: 1;
+	  transform: scale(1);
+	  padding-top: 0px;
+	}
+}
+@-webkit-keyframes grandOpening {
+	from {
+	  opacity: 0;
+	  -webkit-transform: scale(.8);
+	}
+	to {
+	  opacity: 1;
+	  -webkit-transform: scale(1);
+	}
+}
+
+section.work {
+	background: #33363D;
+	padding: 200px 70px;
+	transition: background .75s ease-in-out;
+}
+section.work:hover {
+	background: #3C4048;
+}
+.work p {
+	color: #fff;
+	font-size: 22px;
+	line-height: 30px;
+	font-weight: 300;
+}
+.work p a {
+	color: #969BA8;
+}
+.work p.current-job {
+	font-size: 40px;
+	line-height: 50px;
+}
+
+
+section.blog {
+	background: #969BA8;
+	padding: 250px 70px;
+	transition: background .75s ease-in-out;
+}
+section.blog:hover {
+	background: #9CA2B0;
+}
+section.blog p {
+	font-size: 22px;
+	font-weight: 300;
+	color: #fff;
+	line-height: 30px;
+}
+.blog p a {
+	color: #33363D;
+	font-weight: 400;
+}
+
+
+section.quote {
+	padding: 300px 70px;
+	overflow: hidden;
+	position: relative;
+}
+section.quote:hover .img-mountains {
+	-webkit-filter: blur(0px);
+  -moz-filter: blur(0px);
+  -o-filter: blur(0px);
+  -ms-filter: blur(0px);
+  filter: blur(0px);
+  width: 105%;
+  height: 105%;
+  top: -20px;
+  left: -20px;
+}
+section.quote:hover .mountains-mask {
+	opacity: .7;
+}
+.quote .img-mountains{
+  position: absolute;
+  top: -8%;
+  left: -8%;
+  background-image: url("/images/middle-sister-summit.jpg");
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
+  filter: blur(5px);
+  width: 115%;
+  height: 115%;
+  z-index: -2;
+  transition: all 1.75s ease-in-out;
+}
+.quote .mountains-mask {
+	position: absolute;
+  top: 0px;
+  left: 0px;
+  background: #85A1B7;
+  opacity: .9;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  -webkit-transition: all 1.25s ease-in-out;
+  transition: all 1.25s ease-in-out;
+/*   remove silly flickering in safari */
+  -webkit-transform: translateZ(0);
+}
+section.quote	p {
+	font-size: 32px;
+	font-weight: 700;
+	text-transform: uppercase;
+	color: #FFFFFF;
+	letter-spacing: 5px;
+	transition: letter-spacing 1.75s ease-in-out;
+}
+section.quote:hover p {
+	letter-spacing: 7px;
+}
+	
+section.connect {
+	background: #fff;
+	padding: 200px 0;
+}
+.connect a {
+	font-size: 36px;
+	color: #969BA8;
+	padding: 0 5px;
+}
+.connect a:hover {
+	color: #33363D;
+}
+
+
+
+/* iPhone Styles */
+@media screen and (max-device-width: 480px){
+
+section.header {
+	padding: 100px 30px 0px;
+  height: 530px;
+}
+
+section.work {
+	padding: 110px 10px;
+}
+.work p.current-job {
+  font-size: 26px;
+  line-height: 20px;
+  margin-top: 0px;
+}
+.work p {
+  font-size: 15px;
+  line-height: 25px;
+  margin-top: 16px;
+}
+
+section.blog {
+  padding: 140px 10px;
+}
+
+section.quote {
+	padding: 150px 20px;
+}
+section.quote	p {
+  font-size: 18px;
+  line-height: 32px;
+}
+.quote .mountains-mask {
+  opacity: 0.7;
+ }
+.quote .img-mountains {
+	-webkit-filter: blur(1px);
+	-moz-filter: blur(1px);
+	-o-filter: blur(1px);
+	-ms-filter: blur(1px);
+	filter: blur(1px);
+}
+section.connect {
+  padding: 100px 0;
+}
+.connect a {
+  padding: 0 3px;
+}
+} /* end of iphone */
+
+
+/**
+ * Tooltip Styles
+ */
+
+/* Add this attribute to the element that needs a tooltip */
+[data-tooltip] {
+  position: relative;
+  z-index: 2;
+  cursor: pointer;
+}
+
+/* Hide the tooltip content by default */
+[data-tooltip]:before,
+[data-tooltip]:after {
+  visibility: hidden;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: progid: DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Position tooltip above the element */
+[data-tooltip]:before {
+  position: absolute;
+  bottom: 150%;
+  left: 50%;
+  margin-bottom: 5px;
+  margin-left: -70px;
+  padding: 7px;
+  width: 140px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background-color: #000;
+  background-color: hsla(0, 0%, 20%, 0.9);
+  color: #fff;
+  content: attr(data-tooltip);
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.2;
+}
+
+/* Triangle hack to make tooltip look like a speech bubble */
+[data-tooltip]:after {
+  position: absolute;
+  bottom: 150%;
+  left: 50%;
+  margin-left: -5px;
+  width: 0;
+  border-top: 5px solid #000;
+  border-top: 5px solid hsla(0, 0%, 20%, 0.9);
+  border-right: 5px solid transparent;
+  border-left: 5px solid transparent;
+  content: " ";
+  font-size: 0;
+  line-height: 0;
+}
+
+/* Show tooltip content on hover */
+[data-tooltip]:hover:before,
+[data-tooltip]:hover:after {
+  visibility: visible;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+  filter: progid: DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;
+}
